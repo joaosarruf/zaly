@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaly Serviços</title>
+    <style>
+         body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: url('banner.webp') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            color: #007BFF;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #007BFF;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            margin: 0 auto;
+            max-width: 580px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 15px;
+            margin-bottom: 11px;    
+        }
+
+        .form-container input {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background: #007BFF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background: #0056b3;
+        }
+
+        .about-section {
+            height: 661px;
+            background: url('conheca_zaly.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .partners-section {
+            padding: 5px 0px;
+            height: 330px;
+            background: url(parceiros.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        .partners-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .partners-section img {
+            width: 150px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .contact-section {
+            padding: 5px 0px;
+            height: 729px;
+            background: url('contato.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        
+        /* .contact-section .form {
+            flex: 1 1 50%;
+            max-width: 500px;
+            margin: 10px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-section .form input,
+        .contact-section .form textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section .form textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .contact-section .form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section .form button:hover {
+            background-color: #0056b3;
+        } */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav {
+                margin-top: 10px;
+            }
+
+            .form-container {
+                padding: 20px;
+                margin-top: 30px;
+            }
+
+            .form-container input {
+                width: 90%;
+            }
+
+            .form-container button {
+                width: 90%;
+                padding: 12px;
+            }
+
+            footer {
+                font-size: 14px;
+            }
+
+            .contact-section {
+                padding: 5px 0px;
+                height: 100vh;
+                background: url('contato_mobile.png') no-repeat center center;
+                background-size: contain;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            .form-container {
+                padding: 15px;
+                margin-top: 20px;
+            }
+
+            .form-container input {
+                font-size: 14px;
+            }
+
+            .form-container button {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .contact-section {
+                background: url('contato_mobile.png') no-repeat center center;
+                background-size: cover;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zaly Serviços</h1>
+        <nav>
+            <a href="#">Contato</a>
+            <a href="#">Conheça a Zaly</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <h2>Solicite uma Cotação</h2>
+        <form>
+            <input type="text" placeholder="CEP de Origem">
+            <input type="text" placeholder="CEP de Destino">
+            <input type="number" placeholder="Peso da Carga (kg)">
+            <input type="text" placeholder="Tamanho da Carga (cm)">
+            <input type="text" placeholder="Tipo e Quantidade da Carga">
+            <input type="number" placeholder="Valor da Carga (R$)">
+            <input type="email" placeholder="E-mail para Contato">
+            <input type="tel" placeholder="Telefone (DDD + 9 dígitos)">
+            <button type="submit">Solicitar Cotação</button>
+        </form>
+    </div>
+
+    <div class="about-section"></div>
+
+    <div class="partners-section">
+    </div>
+
+    <div class="contact-section">       
+        <div class="form">
+            <form>
+                <input type="text" placeholder="Seu Nome">
+                <input type="email" placeholder="E-mail">
+                <input type="tel" placeholder="Seu telefone (DDD + 9 dígitos)">
+                <textarea placeholder="Escreva sua mensagem"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Zaly Serviços. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
