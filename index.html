@@ -181,6 +181,12 @@
             background-color: #0056b3;
         }
 
+        .title img{
+            display: block;
+            max-width: 32%; /* Garante que a imagem seja responsiva */
+            height: auto; /* Mantém a proporção */
+            margin: 0px 2px auto; /* Centraliza horizontalmente */
+        }
 
         footer {
             text-align: center;
@@ -193,6 +199,15 @@
         }
 
         @media (max-width: 768px) {
+
+            
+            .title img{
+                display: block;
+                max-width: 15%;
+                height: auto;
+                margin: -6px 46px -42px -14px;
+                margin-bottom: -30px;
+            }
 
             body {
                 background-size: contain; /* Ajusta a imagem para caber no espaço disponível */
@@ -277,9 +292,7 @@
                 height: 283px;
             }
 
-            /* .contact-image {
-                height: 150px; /* Ajusta altura para telas menores */
-            } */
+           
 
             .form {
                 padding: 15px;
@@ -311,7 +324,9 @@
 </head>
 <body>
     <header>
-        <h1>Zaly Serviços</h1>
+        <h1 class="title">
+            <img src="logo.jpg" alt="Zaly Serviços">
+        </h1>
         <nav>
             <a href="#">Contato</a>
             <a href="#">Conheça a Zaly</a>
