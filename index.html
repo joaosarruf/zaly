@@ -16,7 +16,7 @@
             font-family: 'Roboto', Arial, sans-serif;
             background: url('banner.webp') no-repeat center center fixed;
             background-size: cover;
-            padding-bottom: 507px;
+            padding-bottom: 53px;
             overflow-x: hidden;
         }
      
@@ -151,6 +151,7 @@
             background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2;
         }
 
         .form input,
@@ -198,6 +199,34 @@
             z-index: 2;
         }
 
+        .map-section {
+            background-color: #f4f4f4; /* Fundo cinza claro */
+            padding: 50px 20px; /* Espaçamento ao redor da seção */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 800px; /* Define um limite de largura */
+            height: 450px; /* Altura do mapa */
+            border: 1px solid #ddd; /* Borda sutil ao redor do mapa */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+            overflow: hidden; /* Evita overflow de conteúdo */
+            border-radius: 10px; /* Cantos arredondados */
+        }
+
+        @media (min-width: 1200px) {
+            .form {
+                right: 2%;
+                position: absolute;
+                margin-top: -35%;
+            }
+            
+        }
+
         @media (max-width: 768px) {
 
             
@@ -232,7 +261,11 @@
             
 
             .form {
-                width: 90%; /* Formulário ocupa quase toda a largura */
+                width: 90%;
+                margin-top: 10%;
+                margin-bottom: 10%;
+                left: 7%;
+                position: relative;
             }
 
             footer {
@@ -356,15 +389,29 @@
     <div class="contact-section">
         <div class="contact-content">
             <div class="contact-image"></div>
-            <div class="form">
-                <form>
-                    <input type="text" placeholder="Seu Nome">
-                    <input type="email" placeholder="E-mail">
-                    <input type="tel" placeholder="Seu telefone (DDD + 9 dígitos)">
-                    <textarea placeholder="Escreva sua mensagem"></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
+        </div>
+    </div>
+    <div class="form">
+        <form>
+            <input type="text" placeholder="Seu Nome">
+            <input type="email" placeholder="E-mail">
+            <input type="tel" placeholder="Seu telefone (DDD + 9 dígitos)">
+            <textarea placeholder="Escreva sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <div class="map-section">
+        <div class="map-container">
+            <!-- Embede o Google Maps -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8659395566544!2d-122.41941568467853!3d37.77492977975927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064c6f08bbd%3A0x45f0eab3b4e3407c!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbr!4v1696853001255!5m2!1sen!2sbr"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </div>
 
