@@ -472,3 +472,26 @@
     </footer>
 </body>
 </html>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    const form = e.target;
+    const formData = new FormData(form); // Coleta os dados do formulário
+
+    try {
+        const response = await fetch('seu_arquivo_php.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.text(); // Lê a resposta do PHP como texto
+        document.getElementById('response-message').innerText = result; // Mostra a mensagem ao usuário
+    } catch (error) {
+        document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
+        console.error('Erro:', error);
+    }
+});
+
+<script/>
