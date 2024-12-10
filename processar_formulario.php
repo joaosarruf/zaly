@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
   // Destinatário e assunto
-  $to = "seuemail@dominio.com";
+  $to = "joaopsarruf@gmail.com";
   $subject = "Novo contato de $nome";
 
   // Corpo do e-mail

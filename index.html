@@ -199,6 +199,46 @@
             z-index: 2;
         }
 
+        .contact-icons {
+            background: url('background.png') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Posiciona mais para cima */
+            gap: 20px;
+            padding-top: 50px; /* Ajuste para reposicionar os ícones */
+            overflow: hidden; /* Garante que nada ultrapasse o container */
+            position: relative; /* Base para posicionamento */
+        }
+
+        .icon-whatsapp, .icon-email {
+            width: 90%;
+            max-width: 450px; /* Aumenta o tamanho máximo do botão */
+            height: 80px; /* Proporcional ao tamanho do ícone */
+            border-radius: 40px; /* Arredondamento ajustado */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            z-index: 2;
+            box-sizing: border-box; /* Inclui padding dentro do tamanho */
+        }
+
+        .icon-whatsapp i, .icon-email i {
+            font-size: 36px; /* Aumenta o tamanho do ícone mantendo a proporção */
+            margin-right: 20px; /* Espaço entre ícone e texto */
+            color: white; /* Cor branca para o ícone */
+        }
+
+        .icon-whatsapp span, .icon-email span {
+            font-size: 22px; /* Ajusta o tamanho do texto proporcional ao ícone */
+            font-weight: bold;
+            color: white;
+        }
+
         .map-section {
             background-color: #f4f4f4; /* Fundo cinza claro */
             padding: 50px 20px; /* Espaçamento ao redor da seção */
@@ -392,13 +432,25 @@
         </div>
     </div>
     <div class="form">
-        <form>
-            <input type="text" placeholder="Seu Nome">
-            <input type="email" placeholder="E-mail">
-            <input type="tel" placeholder="Seu telefone (DDD + 9 dígitos)">
-            <textarea placeholder="Escreva sua mensagem"></textarea>
+        <form action="seu_arquivo_php.php" method="POST">
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="tel" name="telefone" placeholder="Seu telefone (DDD + 9 dígitos)" required>
+            <textarea name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
             <button type="submit">Enviar</button>
         </form>
+    </div>
+    <div class="contact-icons">
+        <div class="icon-whatsapp">
+            <a href="https://wa.me/SEUNUMERO" target="_blank">
+                <img src="icone_whats.png" alt="WhatsApp" />
+            </a>
+        </div>
+        <div class="icon-email">
+            <a href="mailto:seuemail@exemplo.com" target="_blank">
+                <img src="icone_email.png" alt="Email" />
+            </a>
+        </div>
     </div>
     <div class="map-section">
         <div class="map-container">
