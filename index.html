@@ -193,6 +193,12 @@
         }
 
         @media (max-width: 768px) {
+
+            body {
+                background-size: contain; /* Ajusta a imagem para caber no espaço disponível */
+                background-position: top; /* Ajusta a posição para melhorar o enquadramento */
+            }
+
             header {
                 flex-direction: column;
                 text-align: center;
@@ -239,6 +245,12 @@
         }
 
         @media (max-width: 480px) {
+            
+            body {
+                background-size: 200%; /* Aumenta o tamanho da imagem para cobrir mais área */
+                background-position: center top; /* Centraliza melhor para telas pequenas */
+            }
+
             header h1 {
                 font-size: 20px;
             }
