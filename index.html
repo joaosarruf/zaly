@@ -53,9 +53,7 @@
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-        .footer{
-            z-index: 2;
-        }
+
 
         .form-container input {
             width: 100%;
@@ -191,6 +189,7 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            z-index: 2;
         }
 
         @media (max-width: 768px) {
@@ -247,10 +246,13 @@
             .form-container {
                 padding: 15px;
                 margin-top: 20px;
+                max-width: 278px;
+                height: 586px;
+                margin-bottom: 10px;
             }
 
             .form-container input {
-                font-size: 14px;
+                font-size: 9px;
             }
 
             .form-container button {
