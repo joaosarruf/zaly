@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaly Serviços</title>
     <style>
+        * {
+            box-sizing: border-box; /* Inclui padding e border no cálculo de largura */
+            margin: 0;
+            padding: 0;
+        }
+
          body {
             margin: 0;
             font-family: 'Roboto', Arial, sans-serif;
             background: url('banner.webp') no-repeat center center fixed;
             background-size: cover;
+            padding-bottom: 507px;
+            overflow-x: hidden;
         }
+     
 
         header {
             display: flex;
@@ -37,14 +46,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 6px;
-            margin: 0 auto;
             max-width: 580px;
+            margin: 0 auto;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            margin-top: 15px;
-            margin-bottom: 11px;    
+        }
+        .footer{
+            z-index: 2;
         }
 
         .form-container input {
@@ -80,6 +90,14 @@
             background-size: cover;
         }
 
+        .about-section,
+        .partners-section {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            overflow-x: hidden; /* Apenas estas seções mantêm a regra */
+        }
+
         .partners-section {
             padding: 5px 0px;
             height: 330px;
@@ -99,25 +117,46 @@
         }
 
         .contact-section {
-            padding: 5px 0px;
-            height: 729px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
             background: url('contato.png') no-repeat center center;
             background-size: cover;
+            z-index: 1;
         }
 
-        
-        /* .contact-section .form {
-            flex: 1 1 50%;
-            max-width: 500px;
-            margin: 10px;
-            background: #fff;
+        .contact-content {
+            display: flex;
+            flex-direction: row; /* Para desktops */
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px; /* Limitar a largura máxima */
+            margin-bottom: 20px;
+        }
+
+        .contact-image {
+            height: 300px; /* Altura da imagem */
+            background: url('contato.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 10px;
+            margin-bottom: 450px; /* Espaço abaixo da imagem */
+        }
+
+        .form {
+            width: 100%;
+            max-width: 600px; /* Ajusta para evitar esticar muito no desktop */
             padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .contact-section .form input,
-        .contact-section .form textarea {
+        .form input,
+        .form textarea {
             width: 100%;
             margin-bottom: 15px;
             padding: 15px;
@@ -127,12 +166,7 @@
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-section .form textarea {
-            height: 100px;
-            resize: none;
-        }
-
-        .contact-section .form button {
+        .form button {
             width: 100%;
             padding: 15px;
             background-color: #007BFF;
@@ -145,9 +179,10 @@
             transition: background-color 0.3s ease;
         }
 
-        .contact-section .form button:hover {
+        .form button:hover {
             background-color: #0056b3;
-        } */
+        }
+
 
         footer {
             text-align: center;
@@ -168,18 +203,16 @@
                 margin-top: 10px;
             }
 
-            .form-container {
-                padding: 20px;
-                margin-top: 30px;
+            .contact-content {
+                flex-direction: column; /* Empilhar imagem e formulário */
+                align-items: center;
+                text-align: center;
             }
 
-            .form-container input {
-                width: 90%;
-            }
+            
 
-            .form-container button {
-                width: 90%;
-                padding: 12px;
+            .form {
+                width: 90%; /* Formulário ocupa quase toda a largura */
             }
 
             footer {
@@ -188,7 +221,7 @@
 
             .contact-section {
                 padding: 5px 0px;
-                height: 100vh;
+                height: 238px;
                 background: url('contato_mobile.png') no-repeat center center;
                 background-size: contain;
                 display: flex;
@@ -198,10 +231,10 @@
             }
 
             .about-section {
-            height: 371px;
-            background: url('conheca_zaly_mobile.png') no-repeat center center;
-            background-size: cover;
-        }
+                height: 371px;
+                background: url('conheca_zaly_mobile.png') no-repeat center center;
+                background-size: cover;
+            }
 
             
         }
@@ -227,7 +260,37 @@
             .contact-section {
                 background: url('contato_mobile.png') no-repeat center center;
                 background-size: cover;
+                height: 283px;
             }
+
+            /* .contact-image {
+                height: 150px; /* Ajusta altura para telas menores */
+            } */
+
+            .form {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 414px){
+            .contact-section {
+                height: 283px;
+            }
+
+        }
+
+        @media (max-width: 390px){
+            .contact-section {
+                height: 251px;
+            }
+
+        }
+
+        @media (max-width: 375px){
+            .contact-section {
+                height: 238px;
+            }
+
         }
 
     </style>
@@ -261,15 +324,18 @@
     <div class="partners-section">
     </div>
 
-    <div class="contact-section">       
-        <div class="form">
-            <form>
-                <input type="text" placeholder="Seu Nome">
-                <input type="email" placeholder="E-mail">
-                <input type="tel" placeholder="Seu telefone (DDD + 9 dígitos)">
-                <textarea placeholder="Escreva sua mensagem"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+    <div class="contact-section">
+        <div class="contact-content">
+            <div class="contact-image"></div>
+            <div class="form">
+                <form>
+                    <input type="text" placeholder="Seu Nome">
+                    <input type="email" placeholder="E-mail">
+                    <input type="tel" placeholder="Seu telefone (DDD + 9 dígitos)">
+                    <textarea placeholder="Escreva sua mensagem"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     </div>
 
