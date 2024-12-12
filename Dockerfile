@@ -1,19 +1,20 @@
+# Use uma imagem base oficial do Node.js
 FROM node:18-alpine
 
-# Cria o diretório de trabalho dentro do container
+# Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia package.json e package-lock.json (se houver) antes do código para aproveitar o cache
+# Copia apenas os arquivos de dependência primeiro para otimizar o cache do Docker
 COPY package*.json ./
 
 # Instala as dependências de produção
 RUN npm install --production
 
-# Copia o restante do código
+# Copia o restante dos arquivos do projeto para o diretório de trabalho
 COPY . .
 
-# Se o seu server.js escuta na porta 3000, exponha-a
+# Exponha a porta que o servidor irá utilizar (port 3000)
 EXPOSE 3000
 
-# Comando padrão para iniciar o servidor Node
+# Comando para iniciar o servidor Node.js
 CMD ["npm", "start"]

@@ -433,14 +433,14 @@
           e.preventDefault();
           const form = e.target;
           const formData = new FormData(form);
-  
+
           const data = {
             nome: formData.get('nome'),
             email: formData.get('email'),
             telefone: formData.get('telefone'),
             mensagem: formData.get('mensagem')
           };
-  
+
           try {
             const response = await fetch('/enviar-email', {
               method: 'POST',
@@ -449,13 +449,14 @@
               },
               body: JSON.stringify(data)
             });
-  
+
             const result = await response.text();
             document.getElementById('response-message').innerText = result;
+            form.reset(); // Opcional: limpa o formulário após o envio
           } catch (error) {
             document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
           }
         });
-      </script>
+    </script>
 </body>
 </html>
