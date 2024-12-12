@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaly Serviços</title>
     <style>
+        /* Seu CSS permanece o mesmo */
         * {
-            box-sizing: border-box; /* Inclui padding e border no cálculo de largura */
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-         body {
+        body {
             margin: 0;
             font-family: 'Roboto', Arial, sans-serif;
             background: url('banner.webp') no-repeat center center fixed;
@@ -19,7 +20,6 @@
             padding-bottom: 53px;
             overflow-x: hidden;
         }
-     
 
         header {
             display: flex;
@@ -54,7 +54,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-
         .form-container input {
             width: 100%;
             max-width: 500px;
@@ -88,30 +87,11 @@
             background-size: cover;
         }
 
-        .about-section,
-        .partners-section {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            overflow-x: hidden; /* Apenas estas seções mantêm a regra */
-        }
-
         .partners-section {
             padding: 5px 0px;
             height: 330px;
             background: url(parceiros.png) no-repeat center center;
             background-size: cover;
-        }
-
-        .partners-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .partners-section img {
-            width: 150px;
-            border-radius: 10px;
-            margin: 10px;
         }
 
         .contact-section {
@@ -128,27 +108,27 @@
 
         .contact-content {
             display: flex;
-            flex-direction: row; /* Para desktops */
+            flex-direction: row;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            max-width: 1200px; /* Limitar a largura máxima */
+            max-width: 1200px;
             margin-bottom: 20px;
         }
 
         .contact-image {
-            height: 300px; /* Altura da imagem */
+            height: 300px;
             background: url('contato.png') no-repeat center center;
             background-size: cover;
             border-radius: 10px;
-            margin-bottom: 450px; /* Espaço abaixo da imagem */
+            margin-bottom: 450px;
         }
 
         .form {
             width: 100%;
-            max-width: 600px; /* Ajusta para evitar esticar muito no desktop */
+            max-width: 600px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 2;
@@ -182,11 +162,11 @@
             background-color: #0056b3;
         }
 
-        .title img{
+        .title img {
             display: block;
-            max-width: 32%; /* Garante que a imagem seja responsiva */
-            height: auto; /* Mantém a proporção */
-            margin: 0px 2px auto; /* Centraliza horizontalmente */
+            max-width: 32%;
+            height: auto;
+            margin: 0px 2px auto;
         }
 
         footer {
@@ -206,42 +186,30 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Posiciona mais para cima */
+            justify-content: flex-start;
             gap: 20px;
-            padding-top: 50px; /* Ajuste para reposicionar os ícones */
-            overflow: hidden; /* Garante que nada ultrapasse o container */
-            position: relative; /* Base para posicionamento */
+            padding-top: 50px;
+            overflow: hidden;
+            position: relative;
         }
 
         .icon-whatsapp, .icon-email {
             width: 90%;
-            max-width: 450px; /* Aumenta o tamanho máximo do botão */
-            height: 80px; /* Proporcional ao tamanho do ícone */
-            border-radius: 40px; /* Arredondamento ajustado */
+            max-width: 450px;
+            height: 80px;
+            border-radius: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             cursor: pointer;
             z-index: 2;
-            box-sizing: border-box; /* Inclui padding dentro do tamanho */
-        }
-
-        .icon-whatsapp i, .icon-email i {
-            font-size: 36px; /* Aumenta o tamanho do ícone mantendo a proporção */
-            margin-right: 20px; /* Espaço entre ícone e texto */
-            color: white; /* Cor branca para o ícone */
-        }
-
-        .icon-whatsapp span, .icon-email span {
-            font-size: 22px; /* Ajusta o tamanho do texto proporcional ao ícone */
-            font-weight: bold;
-            color: white;
+            box-sizing: border-box;
         }
 
         .map-section {
-            background-color: #f4f4f4; /* Fundo cinza claro */
-            padding: 50px 20px; /* Espaçamento ao redor da seção */
+            background-color: #f4f4f4;
+            padding: 50px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -250,12 +218,12 @@
 
         .map-container {
             width: 100%;
-            max-width: 800px; /* Define um limite de largura */
-            height: 450px; /* Altura do mapa */
-            border: 1px solid #ddd; /* Borda sutil ao redor do mapa */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
-            overflow: hidden; /* Evita overflow de conteúdo */
-            border-radius: 10px; /* Cantos arredondados */
+            max-width: 800px;
+            height: 450px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 10px;
         }
 
         @media (min-width: 1200px) {
@@ -264,13 +232,10 @@
                 position: absolute;
                 margin-top: -35%;
             }
-            
         }
 
         @media (max-width: 768px) {
-
-            
-            .title img{
+            .title img {
                 display: block;
                 max-width: 15%;
                 height: auto;
@@ -279,8 +244,8 @@
             }
 
             body {
-                background-size: contain; /* Ajusta a imagem para caber no espaço disponível */
-                background-position: top; /* Ajusta a posição para melhorar o enquadramento */
+                background-size: contain;
+                background-position: top;
             }
 
             header {
@@ -293,12 +258,10 @@
             }
 
             .contact-content {
-                flex-direction: column; /* Empilhar imagem e formulário */
+                flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-
-            
 
             .form {
                 width: 90%;
@@ -328,15 +291,12 @@
                 background: url('conheca_zaly_mobile.png') no-repeat center center;
                 background-size: cover;
             }
-
-            
         }
 
         @media (max-width: 480px) {
-            
             body {
-                background-size: 200%; /* Aumenta o tamanho da imagem para cobrir mais área */
-                background-position: center top; /* Centraliza melhor para telas pequenas */
+                background-size: 200%;
+                background-position: center top;
             }
 
             header h1 {
@@ -359,40 +319,35 @@
                 font-size: 16px;
                 padding: 10px;
             }
+
             .contact-section {
                 background: url('contato_mobile.png') no-repeat center center;
                 background-size: cover;
                 height: 283px;
             }
 
-           
-
             .form {
                 padding: 15px;
             }
         }
 
-        @media (max-width: 414px){
+        @media (max-width: 414px) {
             .contact-section {
                 height: 283px;
             }
-
         }
 
-        @media (max-width: 390px){
+        @media (max-width: 390px) {
             .contact-section {
                 height: 251px;
             }
-
         }
 
-        @media (max-width: 375px){
+        @media (max-width: 375px) {
             .contact-section {
                 height: 238px;
             }
-
         }
-
     </style>
 </head>
 <body>
@@ -422,24 +377,26 @@
     </div>
 
     <div class="about-section"></div>
+    <div class="partners-section"></div>
 
-    <div class="partners-section">
-    </div>
-
-    <div class="contact-section">
+    <div class="contact-section">   
         <div class="contact-content">
             <div class="contact-image"></div>
         </div>
     </div>
+
+    <!-- Formulário de Contato - Este é o que envia o e-mail -->
     <div class="form">
-        <form action="processar_formulario.php" method="POST">
-            <input type="text" name="nome" placeholder="Seu Nome" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="tel" name="telefone" placeholder="Seu telefone (DDD + 9 dígitos)" required>
-            <textarea name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
+        <form id="contact-form">
+            <input type="text" name="nome" placeholder="Seu Nome" required><br>
+            <input type="email" name="email" placeholder="Seu E-mail" required><br>
+            <input type="tel" name="telefone" placeholder="Telefone" required><br>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea><br>
             <button type="submit">Enviar</button>
         </form>
+        <div id="response-message"></div>
     </div>
+
     <div class="contact-icons">
         <div class="icon-whatsapp">
             <a href="https://wa.me/SEUNUMERO" target="_blank">
@@ -452,9 +409,9 @@
             </a>
         </div>
     </div>
+
     <div class="map-section">
         <div class="map-container">
-            <!-- Embede o Google Maps -->
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8659395566544!2d-122.41941568467853!3d37.77492977975927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064c6f08bbd%3A0x45f0eab3b4e3407c!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbr!4v1696853001255!5m2!1sen!2sbr"
                 width="100%"
@@ -470,28 +427,24 @@
     <footer>
         &copy; 2024 Zaly Serviços. Todos os direitos reservados.
     </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('processar_formulario.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.text();
+                document.getElementById('response-message').innerText = result;
+            } catch (error) {
+                document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
+            }
+        });
+    </script>
 </body>
 </html>
-
-<script>
-    document.getElementById('contact-form').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Impede o envio padrão do formulário
-
-    const form = e.target;
-    const formData = new FormData(form); // Coleta os dados do formulário
-
-    try {
-        const response = await fetch('seu_arquivo_php.php', {
-            method: 'POST',
-            body: formData
-        });
-
-        const result = await response.text(); // Lê a resposta do PHP como texto
-        document.getElementById('response-message').innerText = result; // Mostra a mensagem ao usuário
-    } catch (error) {
-        document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
-        console.error('Erro:', error);
-    }
-});
-
-<script/>
