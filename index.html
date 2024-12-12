@@ -363,17 +363,18 @@
 
     <div class="form-container">
         <h2>Solicite uma Cotação</h2>
-        <form>
-            <input type="text" placeholder="CEP de Origem">
-            <input type="text" placeholder="CEP de Destino">
-            <input type="number" placeholder="Peso da Carga (kg)">
-            <input type="text" placeholder="Tamanho da Carga (cm)">
-            <input type="text" placeholder="Tipo e Quantidade da Carga">
-            <input type="number" placeholder="Valor da Carga (R$)">
-            <input type="email" placeholder="E-mail para Contato">
-            <input type="tel" placeholder="Telefone (DDD + 9 dígitos)">
+        <form id="quote-form">
+            <input type="text" name="cep_origem" placeholder="CEP de Origem" required>
+            <input type="text" name="cep_destino" placeholder="CEP de Destino" required>
+            <input type="number" name="peso" placeholder="Peso da Carga (kg)" required>
+            <input type="text" name="tamanho" placeholder="Tamanho da Carga (cm)" required>
+            <input type="text" name="tipo_quantidade" placeholder="Tipo e Quantidade da Carga" required>
+            <input type="number" name="valor" placeholder="Valor da Carga (R$)" required>
+            <input type="email" name="email_contato" placeholder="E-mail para Contato" required>
+            <input type="tel" name="telefone" placeholder="Telefone (DDD + 9 dígitos)" required>
             <button type="submit">Solicitar Cotação</button>
         </form>
+        <div id="response-message-quote"></div>
     </div>
 
     <div class="about-section"></div>
@@ -458,5 +459,41 @@
           }
         });
     </script>
+
+<script>
+    document.getElementById('quote-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        const data = {
+            cep_origem: formData.get('cep_origem'),
+            cep_destino: formData.get('cep_destino'),
+            peso: formData.get('peso'),
+            tamanho: formData.get('tamanho'),
+            tipo_quantidade: formData.get('tipo_quantidade'),
+            valor: formData.get('valor'),
+            email_contato: formData.get('email_contato'),
+            telefone: formData.get('telefone')
+        };
+
+        try {
+            const response = await fetch('/solicitar-cotacao', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.text();
+            document.getElementById('response-message-quote').innerText = result;
+            form.reset(); // Opcional: limpa o formulário após o envio
+        } catch (error) {
+            document.getElementById('response-message-quote').innerText = 'Erro ao enviar a mensagem.';
+        }
+    });
+</script>
+
 </body>
 </html>

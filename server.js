@@ -29,7 +29,7 @@ const transporter = nodemailer.createTransport({
     logger: true // Exibe logs no console (opcional)
 });
 
-// Rota para enviar e-mail
+// Rota para enviar e-mail de contato
 app.post('/enviar-email', async (req, res) => {
     const { nome, email, telefone, mensagem } = req.body;
 
@@ -53,6 +53,44 @@ app.post('/enviar-email', async (req, res) => {
     } catch (error) {
         console.error('Erro ao enviar e-mail:', error);
         res.status(500).send('Erro ao enviar a mensagem.');
+    }
+});
+
+// Rota para enviar e-mail de cotação
+app.post('/solicitar-cotacao', async (req, res) => {
+    const { cep_origem, cep_destino, peso, tamanho, tipo_quantidade, valor, email_contato, telefone } = req.body;
+
+    // Verifica se todos os campos estão preenchidos
+    if (!cep_origem || !cep_destino || !peso || !tamanho || !tipo_quantidade || !valor || !email_contato || !telefone) {
+        return res.status(400).send('Por favor, preencha todos os campos.');
+    }
+
+    // Configurações do e-mail de cotação
+    const mailOptions = {
+        from: `"Formulário Zaly - Cotação" <joaopsarruf@gmail.com>`, // Remetente
+        to: 'joaopsarruf@gmail.com', // Destinatário (seu e-mail)
+        subject: `Solicitação de Cotação de ${cep_origem} para ${cep_destino}`,
+        text: `
+        Novo pedido de cotação:
+
+        CEP de Origem: ${cep_origem}
+        CEP de Destino: ${cep_destino}
+        Peso da Carga: ${peso} kg
+        Tamanho da Carga: ${tamanho} cm
+        Tipo e Quantidade da Carga: ${tipo_quantidade}
+        Valor da Carga: R$ ${valor}
+        E-mail para Contato: ${email_contato}
+        Telefone: ${telefone}
+        `
+    };
+
+    try {
+        // Envia o e-mail de cotação
+        await transporter.sendMail(mailOptions);
+        res.send('Cotação solicitada com sucesso!');
+    } catch (error) {
+        console.error('Erro ao enviar e-mail de cotação:', error);
+        res.status(500).send('Erro ao enviar a solicitação de cotação.');
     }
 });
 
