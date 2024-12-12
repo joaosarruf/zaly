@@ -430,21 +430,32 @@
 
     <script>
         document.getElementById('contact-form').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-
-            try {
-                const response = await fetch('processar_formulario.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                const result = await response.text();
-                document.getElementById('response-message').innerText = result;
-            } catch (error) {
-                document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
-            }
+          e.preventDefault();
+          const form = e.target;
+          const formData = new FormData(form);
+  
+          const data = {
+            nome: formData.get('nome'),
+            email: formData.get('email'),
+            telefone: formData.get('telefone'),
+            mensagem: formData.get('mensagem')
+          };
+  
+          try {
+            const response = await fetch('/enviar-email', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            });
+  
+            const result = await response.text();
+            document.getElementById('response-message').innerText = result;
+          } catch (error) {
+            document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
+          }
         });
-    </script>
+      </script>
 </body>
 </html>
