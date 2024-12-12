@@ -16,15 +16,17 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Configuração do transportador SMTP usando variáveis de ambiente
+// Configuração do transportador SMTP com credenciais hard-coded
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     secure: false, // true para 465, false para outras portas
     auth: {
         user: 'jpsarruf15@gmail.com', // Seu e-mail de envio
-        pass: 'azge aszu bqhg mcje'  // Sua senha de app
-    }
+        pass: 'azgeaszubqhgmcje'  // Sua senha de app (sem espaços)
+    },
+    debug: true, // Habilita logs detalhados (opcional)
+    logger: true // Exibe logs no console (opcional)
 });
 
 // Rota para enviar e-mail
@@ -38,8 +40,8 @@ app.post('/enviar-email', async (req, res) => {
 
     // Configurações do e-mail
     const mailOptions = {
-        from: `"Formulário Zaly" 'jpsarruf15@gmail.com'`, // Remetente
-        to: 'jpsarruf15@gmail.com', // Destinatário (e-mail da empresa)
+        from: `"Formulário Zaly" <jpsarruf15@gmail.com>`, // Remetente
+        to: 'jpsarruf15@gmail.com', // Destinatário (seu e-mail)
         subject: `Novo contato de ${nome}`,
         text: `Nome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}\nMensagem:\n${mensagem}`
     };
