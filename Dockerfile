@@ -1,17 +1,19 @@
-# Use uma imagem base com PHP e Apache
-FROM php:8.1-apache
+FROM node:18-alpine
 
-# Copie todos os arquivos do projeto para o diretório root do servidor
-COPY . /var/www/html/
+# Cria o diretório de trabalho dentro do container
+WORKDIR /app
 
-# Configure as permissões
-RUN chown -R www-data:www-data /var/www/html
+# Copia package.json e package-lock.json (se houver) antes do código para aproveitar o cache
+COPY package*.json ./
 
-# Instala extensões de email caso necessário (opcional, depende do servidor)
-# RUN docker-php-ext-install mail ...
+# Instala as dependências de produção
+RUN npm install --production
 
-# Exponha a porta 80 para o servidor web
-EXPOSE 80
+# Copia o restante do código
+COPY . .
 
-# Inicia o servidor Apache
-CMD ["apache2-foreground"]
+# Se o seu server.js escuta na porta 3000, exponha-a
+EXPOSE 3000
+
+# Comando padrão para iniciar o servidor Node
+CMD ["npm", "start"]
