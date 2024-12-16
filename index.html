@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Zaly Serviços</title>
     <style>
         /* Seu CSS permanece o mesmo */
@@ -372,6 +372,12 @@
             .about-content .call-to-action {
                 font-size: 1.2rem;
             }
+
+            .form-banner {
+                background-size: cover; /* Preenche o espaço em dispositivos menores */
+                background-position: center center; /* Garante centralização */
+                min-height: 200px; /* Ajusta altura para telas pequenas */
+            }
         }
 
         @media (max-width: 480px) {
@@ -433,6 +439,11 @@
 
             .form {
                 padding: 15px;
+            }
+
+            .form-banner {
+                background-size: contain; /* Ajuste proporcional para telas muito pequenas */
+                min-height: 150px; /* Reduz a altura mínima */
             }
         }
 
