@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Zaly Serviços</title>
     <style>
         /* Seu CSS permanece o mesmo */
@@ -160,30 +161,58 @@
         }
 
         .contact-section {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 40px 20px;
             background-size: cover;
-            z-index: 1;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            width: 100%;
         }
+        
 
         .contact-content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+            border-radius: 16px; /* Bordas arredondadas */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+            max-width: 90%; /* Ajuste da largura */
+            margin-left: -364px;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007BFF; /* Azul vibrante */
             margin-bottom: 20px;
-            overflow: hidden;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-content p {
+            font-size: 1.2rem;
+            line-height: 1.8; /* Espaçamento entre linhas */
+            margin-bottom: 20px;
+            text-align: justify; /* Justifica o texto para melhor legibilidade */
+            display: flex;
+            flex-direction: row; /* Posição lado a lado em desktops */
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px; /* Largura máxima da seção */
+            width: 100%;
+            gap: 40px; /* Espaço entre texto e formulário */
+            padding: 20px;
+        }
+
+        .contact-content .call-to-action {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #0056b3; /* Azul mais forte */
+            margin-top: 20px;
+            text-align: center;
         }
 
         .contact-image {
             height: 300px;
-            background: url('contato.png') no-repeat center center;
             background-size: cover;
             border-radius: 10px;
             margin-bottom: 450px;
@@ -245,50 +274,46 @@
         }
 
         .contact-icons {
-            background: url('background.png') no-repeat center center;
-            background-size: cover;
-            height: 400px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 20px;
-            padding-top: 50px;
-            overflow: hidden;
-            position: relative;
+            flex-direction: column; /* Empilha os ícones verticalmente */
+            align-items: center; /* Centraliza o conteúdo */
+            justify-content: center; /* Centraliza verticalmente */
+            gap: 20px; /* Espaço entre os ícones */
+            padding: 30px 0;
+            background: #f4f4f4; /* Fundo claro */
         }
 
-        .icon-whatsapp, .icon-email {
+        .icon-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Remove sublinhado */
+            font-size: 18px; /* Tamanho do texto */
+            font-weight: bold;
+            color: #007BFF; /* Cor principal */
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            border: 2px solid #ddd; /* Borda sutil */
+            border-radius: 25px; /* Bordas arredondadas */
+            padding: 10px 20px; /* Espaçamento interno */
+            transition: background-color 0.3s, transform 0.3s;
             width: 90%;
             max-width: 450px;
-            height: 80px;
-            border-radius: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            cursor: pointer;
-            z-index: 2;
-            box-sizing: border-box;
         }
 
-        .map-section {
-            background-color: #f4f4f4;
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        .icon-link:hover {
+            background-color: #007BFF; /* Fundo azul no hover */
+            color: #fff; /* Texto branco no hover */
+            transform: scale(1.05); /* Leve aumento no hover */
         }
 
-        .map-container {
-            width: 100%;
-            max-width: 800px;
-            height: 450px;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            border-radius: 10px;
+        .icon-whatsapp i {
+            color: #25D366; /* Cor verde para o ícone do WhatsApp */
+            font-size: 24px; /* Tamanho maior do ícone */
+        }
+
+        .icon-email i {
+            color: #0056b3; /* Cor azul para o ícone de e-mail */
+            font-size: 24px; /* Tamanho maior do ícone */
         }
 
         @media (min-width: 1200px) {
@@ -300,170 +325,115 @@
         }
 
         @media (max-width: 768px) {
-            .title img {
-                display: block;
-                max-width: 15%;
-                height: auto;
-                margin: -6px 46px -42px -14px;
-                margin-bottom: -30px;
-            }
-
-            body {
-                background-size: contain;
-                background-position: top;
-            }
-
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            header nav {
-                margin-top: 10px;
-            }
-
-            .contact-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .form {
-                width: 90%;
-                margin-top: 10%;
-                margin-bottom: 10%;
-                left: 7%;
-                position: relative;
-            }
-
-            footer {
-                font-size: 14px;
-            }
-
-            .contact-section {
-                padding: 5px 0px;
-                height: 238px;
-                background: url('contato_mobile.png') no-repeat center center;
-                background-size: contain;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 20px;
-            }
-
-            .about-section {
-                min-height: auto; /* Permite que o conteúdo ajuste dinamicamente */
-                padding: 20px;
-            }
-
-            .about-content {
-                padding: 15px;
-                font-size: 14px;
-            }
-
-            .about-content h2 {
-                font-size: 2rem;
-            }
-
-            .about-content p {
-                font-size: 1rem;
-            }
-
-            .about-content .call-to-action {
-                font-size: 1.2rem;
-            }
-
-            .form-banner {
-                background-size: cover; /* Preenche o espaço em dispositivos menores */
-                background-position: center center; /* Garante centralização */
-                min-height: 200px; /* Ajusta altura para telas pequenas */
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
+        header {
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
 
-            header h1 {
-                font-size: 18px;
-            }
+        
 
-            .form-container {
-                max-width: 95%;
-                padding: 10px;
-            }
-
-            .form-container, .about-content, .contact-content {
-                max-width: 100%; /* Ocupa toda a largura da tela */
-                margin: 0;
-                padding: 10px; /* Ajuste para telas pequenas */
-            }
-
-
-            .form-container input,
-            .form-container button {
-                font-size: 12px;
-            }
-
-            .about-section {
-                padding: 20px 10px;
-            }
-
-            .about-content h2 {
-                font-size: 1.5rem;
-            }
-
-            .about-content p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
-            .about-content .call-to-action {
-                font-size: 1rem;
-            }
-
-
-            footer {
-                font-size: 12px;
-                padding: 10px;
-            }
-
-            .contact-section {
-                background: url('contato_mobile.png') no-repeat center center;
-                background-size: cover;
-                height: 283px;
-            }
-
-            .form {
-                padding: 15px;
-            }
-
-            .form-banner {
-                background-size: contain; /* Ajuste proporcional para telas muito pequenas */
-                min-height: 150px; /* Reduz a altura mínima */
-            }
+        header nav {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        @media (max-width: 414px) {
-            .contact-section {
-                height: 283px;
-            }
+        header nav a {
+            margin: 0;
+            font-size: 14px;
         }
 
-        @media (max-width: 390px) {
-            .contact-section {
-                height: 251px;
-            }
+        .form-banner {
+            min-height: 200px;
+            padding: 20px 10px;
         }
 
-        @media (max-width: 375px) {
-            .contact-section {
-                height: 238px;
-            }
+        .form-container {
+            width: 95%;
+            padding: 15px;
         }
+
+        .form-container input,
+        .form-container button {
+            font-size: 14px;
+        }
+
+        .about-section {
+            padding: 20px 10px;
+        }
+
+        .about-content {
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 20px;
+        }
+
+        .contact-section {
+            flex-direction: column;
+            padding: 20px 10px;
+        }
+
+        .contact-content {
+            margin-bottom: 8px;
+            margin-left: 20px; /* Remove o deslocamento */
+            margin-right: 0; /* Garante centralização */
+            margin-top: 20px; /* Adiciona espaçamento superior opcional */
+            width: 100%; /* Garante que ocupe toda a largura disponível */
+            text-align: center; /* Centraliza o conteúdo internamente */
+            font-size: 12px;
+        }
+
+        .form {
+            width: 95%;
+            padding: 10px;
+            margin-left: 11px;
+        }
+
+        
+
+        footer {
+            font-size: 12px;
+            padding: 10px;
+        }
+
+        .icon-link {
+            font-size: 16px; /* Reduz o tamanho do texto */
+            padding: 8px 16px; /* Ajusta o espaçamento interno */
+        }
+
+        .icon-link i {
+            font-size: 20px; /* Reduz o tamanho do ícone */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .form-container {
+            padding: 10px;
+        }
+
+        .form-container input,
+        .form-container button {
+            font-size: 12px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+
+        footer {
+            font-size: 10px;
+            padding: 5px;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -521,36 +491,50 @@
 
     <div class="partners-section"></div>
 
-    <div class="contact-section">   
-        <div class="contact-content">
-            <div class="contact-image"></div>
+    <div class="contact-section" id="contact-section">
+        <div class="contact-container">
+            <!-- Texto do Contato -->
+            <div class="contact-content">
+                <h2>Contato</h2>
+                <p>
+                    Na Zaly, acreditamos que boas parcerias começam com uma boa conversa. Quer tirar dúvidas, compartilhar ideias ou iniciar uma parceria exclusiva para o transporte das suas mercadorias? Estamos prontos para ouvir você!
+                </p>
+                <p>
+                    Preencha o formulário abaixo ou fale diretamente conosco pelo WhatsApp. Nossa equipe está sempre disponível para oferecer a solução que você precisa, com rapidez, atenção e o compromisso de sempre colocar o cliente em primeiro lugar.
+                </p>
+                <p>
+                    Não importa o tamanho da sua necessidade logística, estamos aqui para facilitar o seu dia a dia e garantir que você tenha uma experiência excepcional com a Zaly.
+                </p>
+                <p class="call-to-action">
+                    Fale conosco agora mesmo e dê o primeiro passo para transformar sua logística em algo verdadeiramente estratégico!
+                </p>
+            </div>
+    
+            <!-- Formulário de Contato -->
+            <div class="form">
+                <form id="contact-form">
+                    <input type="text" name="nome" placeholder="Seu Nome" required><br>
+                    <input type="email" name="email" placeholder="Seu E-mail" required><br>
+                    <input type="tel" name="telefone" placeholder="Telefone" required><br>
+                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea><br>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div id="response-message"></div>
+            </div>
         </div>
-    </div>
-
-    <!-- Formulário de Contato - Este é o que envia o e-mail -->
-    <div class="form">
-        <form id="contact-form">
-            <input type="text" name="nome" placeholder="Seu Nome" required><br>
-            <input type="email" name="email" placeholder="Seu E-mail" required><br>
-            <input type="tel" name="telefone" placeholder="Telefone" required><br>
-            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea><br>
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="response-message"></div>
     </div>
 
 
     <div class="contact-icons">
-        <div class="icon-whatsapp">
-            <a href="https://wa.me/5581996158047" target="_blank">
-                <img src="icone_whats.png" alt="WhatsApp" />
-            </a>
-        </div>
-        <div class="icon-email">
-            <a href="mailto:zalyservicos@gmail.com" target="_blank">
-                <img src="icone_email.png" alt="Email" />
-            </a>
-        </div>
+        <!-- Ícone do WhatsApp -->
+        <a href="https://wa.me/5581996158047" target="_blank" class="icon-link icon-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        
+        <!-- Ícone do E-mail -->
+        <a href="mailto:zalyservicos@gmail.com" target="_blank" class="icon-link icon-email">
+            <i class="fas fa-envelope"></i> E-mail
+        </a>
     </div>
 
     <footer>
