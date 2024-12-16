@@ -15,7 +15,6 @@
         body {
             margin: 0;
             font-family: 'Roboto', Arial, sans-serif;
-            background: url('banner.webp') no-repeat center center fixed;
             background-size: cover;
             padding-bottom: 53px;
             overflow-x: hidden;
@@ -41,50 +40,127 @@
             font-weight: bold;
         }
 
+        .form-banner {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Altura da área do banner */
+            background: url('banner.png') no-repeat center center; /* Banner de fundo */
+            background-size: cover;
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            overflow: hidden; /* Garante que nada ultrapasse os limites */
+            padding: 40px 0; /* Adiciona espaçamento interno no topo e embaixo */
+        }
+
         .form-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            max-width: 580px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 400px; /* Reduz o tamanho máximo */
+            width: 90%; /* Ajusta a largura para telas menores */
+            padding: 20px; /* Espaçamento interno do formulário */
+            background: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+            border-radius: 16px; /* Bordas arredondadas */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+            height: 490px;
         }
-
-        .form-container input {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            font-size: 16px;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        
+        /* Inputs e botões responsivos */
+        .form-container input,
+        .form-container button {
+            width: 100%; /* Ocupa a largura do formulário */
+            max-width: none; /* Remove o limite fixo */
+            font-size: 11px; /* Ajusta a fonte para telas menores */
         }
 
         .form-container button {
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 8px; /* Botão confortável em telas pequenas */
+        }
+
+        .form-container input {
+            max-width: 450px; /* Reduzido proporcionalmente */
+            padding: 10px; /* Ajustado para proporção */
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 11px; /* Ajustado proporcionalmente */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container button {
+            font-size: 14px; /* Reduzido de 18px */
             color: #fff;
             background: #007BFF;
             border: none;
-            border-radius: 30px;
+            border-radius: 25px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px; /* Mantido o espaçamento */
             transition: background 0.3s ease;
         }
 
-        .form-container button:hover {
-            background: #0056b3;
+        /* Seção de "Conheça a Zaly" e formulário ajustados */
+        .about-section {
+            
+            background: url('banner.png') no-repeat center center fixed;
+            position: relative;
+            width: 100%;
+            min-height: 500px;
+            background-size: cover;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .about-section {
-            height: 661px;
-            background: url('conheca_zaly.png') no-repeat center center;
-            background-size: cover;
+        /* Fundo semi-transparente com blur */
+        .about-content {
+            
+            position: absolute; /* Para ocupar toda a área */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px; /* Espaçamento interno */
+            background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+            backdrop-filter: blur(10px); /* Efeito de desfoque */
+            border-radius: 16px; /* Borda arredondada */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #333; /* Cor do texto */
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        /* Estilo do título */
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007BFF; /* Azul vibrante */
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilo do texto */
+        .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.8; /* Espaçamento entre linhas */
+            margin-bottom: 20px;
+            text-align: justify; /* Justifica o texto para melhor legibilidade */
+        }
+
+        /* Estilo para a chamada de ação */
+        .about-content .call-to-action {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #0056b3; /* Azul mais forte */
+            margin-top: 20px;
+            text-align: center;
         }
 
         .partners-section {
@@ -101,7 +177,6 @@
             align-items: center;
             justify-content: flex-start;
             padding: 40px 20px;
-            background: url('contato.png') no-repeat center center;
             background-size: cover;
             z-index: 1;
         }
@@ -288,35 +363,65 @@
 
             .about-section {
                 height: 371px;
-                background: url('conheca_zaly_mobile.png') no-repeat center center;
                 background-size: cover;
+            }
+            .about-content {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .about-content h2 {
+                font-size: 2rem;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            .about-content .call-to-action {
+                font-size: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
-            body {
-                background-size: 200%;
-                background-position: center top;
+            header {
+                flex-direction: column;
+                align-items: center;
             }
 
             header h1 {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .form-container {
-                padding: 15px;
-                margin-top: 20px;
-                max-width: 278px;
-                height: 586px;
-                margin-bottom: 10px;
+                max-width: 95%;
+                padding: 10px;
             }
 
-            .form-container input {
-                font-size: 9px;
-            }
-
+            .form-container input,
             .form-container button {
-                font-size: 16px;
+                font-size: 12px;
+            }
+
+            .about-section {
+                padding: 20px 10px;
+            }
+
+            .about-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-content p {
+                font-size: 0.9rem;
+            }
+
+            .about-content .call-to-action {
+                font-size: 1rem;
+            }
+
+
+            footer {
+                font-size: 12px;
                 padding: 10px;
             }
 
@@ -356,28 +461,53 @@
             <img src="logo.jpg" alt="Zaly Serviços">
         </h1>
         <nav>
-            <a href="#">Contato</a>
-            <a href="#">Conheça a Zaly</a>
+            <a href="#banner-form">Solicitar Cotação</a>
+            <a href="#about-section">Conheça a Zaly</a>
+            <a href="#contact-section">Contato</a>
         </nav>
     </header>
 
-    <div class="form-container">
-        <h2>Solicite uma Cotação</h2>
-        <form id="quote-form">
-            <input type="text" name="cep_origem" placeholder="CEP de Origem" required>
-            <input type="text" name="cep_destino" placeholder="CEP de Destino" required>
-            <input type="number" name="peso" placeholder="Peso da Carga (kg)" required>
-            <input type="text" name="tamanho" placeholder="Tamanho da Carga (cm)" required>
-            <input type="text" name="tipo_quantidade" placeholder="Tipo e Quantidade da Carga" required>
-            <input type="number" name="valor" placeholder="Valor da Carga (R$)" required>
-            <input type="email" name="email_contato" placeholder="E-mail para Contato" required>
-            <input type="tel" name="telefone" placeholder="Telefone (DDD + 9 dígitos)" required>
-            <button type="submit">Solicitar Cotação</button>
-        </form>
-        <div id="response-message-quote"></div>
+    <div class="form-banner">
+        <div class="form-container">
+            <h2>Solicite uma Cotação</h2>
+            <form id="quote-form">
+                <input type="text" name="cep_origem" placeholder="CEP de Origem" required>
+                <input type="text" name="cep_destino" placeholder="CEP de Destino" required>
+                <input type="number" name="peso" placeholder="Peso da Carga (kg)" required>
+                <input type="text" name="tamanho" placeholder="Tamanho da Carga (cm)" required>
+                <input type="text" name="tipo_quantidade" placeholder="Tipo e Quantidade da Carga" required>
+                <input type="number" name="valor" placeholder="Valor da Carga (R$)" required>
+                <input type="email" name="email_contato" placeholder="E-mail para Contato" required>
+                <input type="tel" name="telefone" placeholder="Telefone (DDD + 9 dígitos)" required>
+                <button type="submit">Solicitar Cotação</button>
+            </form>
+            <div id="response-message-quote"></div>
+        </div>
     </div>
 
-    <div class="about-section"></div>
+     <!-- Bloco 3: Conheça a Zaly -->
+     <div class="about-section" id="about-section">
+        <div class="about-content">
+            <h2>Conheça a Zaly</h2>
+            <p>
+                Na Zaly, cada quilômetro percorrido conta uma história. Somos mais do que uma transportadora:
+                especialistas em criar soluções logísticas sob medida para clientes que buscam exclusividade,
+                confiança e excelência. Atendemos todo o Nordeste e diversas regiões do Brasil, conectando destinos
+                com eficiência e comprometimento.
+            </p>
+            <p>
+                Com uma frota moderna, equipe capacitada e muita experiência no setor, garantimos que sua carga chegue
+                ao destino final de forma ágil, segura e dentro do prazo. Nosso diferencial? Preços que cabem no seu
+                orçamento e um modelo de trabalho focado em parcerias de longo prazo.
+            </p>
+            <p>
+                Escolher a Zaly significa investir em tranquilidade, confiando sua logística a quem entende que cada
+                carga é única e cada cliente, indispensável.
+            </p>
+            <p class="call-to-action">Pronto para transformar a logística da sua empresa? <strong>A Zaly está aqui para você.</strong></p>
+        </div>
+    </div>
+
     <div class="partners-section"></div>
 
     <div class="contact-section">   
@@ -398,6 +528,7 @@
         <div id="response-message"></div>
     </div>
 
+
     <div class="contact-icons">
         <div class="icon-whatsapp">
             <a href="https://wa.me/5581996158047" target="_blank">
@@ -411,22 +542,11 @@
         </div>
     </div>
 
-    <div class="map-section">
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8659395566544!2d-122.41941568467853!3d37.77492977975927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064c6f08bbd%3A0x45f0eab3b4e3407c!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbr!4v1696853001255!5m2!1sen!2sbr"
-                width="100%"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </div>
-
     <footer>
-        &copy; 2024 Zaly Serviços. Todos os direitos reservados.
+        &copy; 2024 Zaly Serviços. Todos os direitos reservados. <br>
+        <span>Desenvolvido por 
+            <a href="https://cloudspherecs-1.onrender.com" target="_blank" style="color: #007BFF; text-decoration: none;">CloudSphereCS</a>
+        </span>
     </footer>
 
     <script>
