@@ -23,15 +23,26 @@
 
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centraliza o contêiner dentro do header */
             align-items: center;
             background-color: #f4f4f4;
             padding: 10px 20px;
         }
 
-        header h1 {
-            font-size: 24px;
-            color: #007BFF;
+        .header-container {
+            display: flex;
+            align-items: center;
+            max-width: 1200px; /* Define uma largura máxima para o contêiner */
+            width: 100%;
+        }
+
+        .header-container h1 {
+            margin-right: 40px; /* Espaçamento entre o logo e a navegação */
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px; /* Espaçamento entre os links */
         }
 
         header nav a {
@@ -48,7 +59,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            /* align-items: center; */
             background: url(banner.png) no-repeat center center;
             background-size: cover; /* Faz a imagem preencher a div completamente */
             background-attachment: fixed; /* Adiciona um efeito de paralaxe opcional */
@@ -65,6 +76,7 @@
             border-radius: 16px; /* Bordas arredondadas */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra */
             height: 490px;
+            margin-left: 118px;
         }
         
         /* Inputs e botões responsivos */
@@ -322,94 +334,125 @@
                 position: absolute;
                 margin-top: -35%;
             }
+
+            .header-container {
+                max-width: 1000px; /* Ajuste conforme necessário */
+            }
+
+            header nav a {
+                font-size: 16px; /* Aumenta o tamanho da fonte dos links */
+            }
         }
 
         @media (max-width: 768px) {
-        header {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+
+            /* .header-container h1 {
+                margin-right: 179px;
+            } */
+
 
         
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 5px 20px; /* Reduzido de 10px para 5px */
+            }
 
-        header nav {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+            .header-container {
+                flex-direction: column; /* Empilha logo e nav verticalmente */
+                align-items: flex-start; /* Alinha à esquerda */
+                width: 100%;
+            }
 
-        header nav a {
-            margin: 0;
-            font-size: 14px;
-        }
+            .header-container h1 {
+                margin-right: 0; /* Remove o espaçamento direito */
+                margin-bottom: 10px; /* Espaçamento abaixo do logo */
+            }
 
-        .form-banner {
-            min-height: 200px;
-            padding: 20px 10px;
-        }
+            header nav {
+                width: 100%; /* Ocupa toda a largura disponível */
+                flex-direction: column;
+                gap: 10px; /* Espaçamento entre os links */
+            }
 
-        .form-container {
-            width: 95%;
-            padding: 15px;
-        }
+            header nav a {
+                width: auto; /* Ajusta a largura dos links */
+                font-size: larger;
+                top: -69px;
+                position: relative;
+            }
 
-        .form-container input,
-        .form-container button {
-            font-size: 14px;
-        }
 
-        .about-section {
-            padding: 20px 10px;
-        }
+            .form-banner {
+                min-height: 200px;
+                padding: 20px 10px;
+                align-items: center;
+            }
 
-        .about-content {
-            font-size: 14px;
-            padding: 10px;
-            text-align: center;
-        }
+            
 
-        .about-content h2 {
-            font-size: 20px;
-        }
+            .form-container {
+                width: 95%;
+                padding: 15px;
+                margin-left: 0px;
+            }
 
-        .contact-section {
-            flex-direction: column;
-            padding: 20px 10px;
-        }
+            .form-container input,
+            .form-container button {
+                font-size: 14px;
+            }
 
-        .contact-content {
-            margin-bottom: 8px;
-            margin-left: 20px; /* Remove o deslocamento */
-            margin-right: 0; /* Garante centralização */
-            margin-top: 20px; /* Adiciona espaçamento superior opcional */
-            width: 100%; /* Garante que ocupe toda a largura disponível */
-            text-align: center; /* Centraliza o conteúdo internamente */
-            font-size: 12px;
-        }
+            .about-section {
+                padding: 20px 10px;
+            }
 
-        .form {
-            width: 95%;
-            padding: 10px;
-            margin-left: 11px;
-        }
+            .about-content {
+                font-size: 14px;
+                padding: 10px;
+                text-align: center;
+            }
 
-        
+            .about-content h2 {
+                font-size: 20px;
+            }
 
-        footer {
-            font-size: 12px;
-            padding: 10px;
-        }
+            .contact-section {
+                flex-direction: column;
+                padding: 20px 10px;
+            }
 
-        .icon-link {
-            font-size: 16px; /* Reduz o tamanho do texto */
-            padding: 8px 16px; /* Ajusta o espaçamento interno */
-        }
+            .contact-content {
+                margin-bottom: 8px;
+                margin-left: 20px; /* Remove o deslocamento */
+                margin-right: 0; /* Garante centralização */
+                margin-top: 20px; /* Adiciona espaçamento superior opcional */
+                width: 100%; /* Garante que ocupe toda a largura disponível */
+                text-align: center; /* Centraliza o conteúdo internamente */
+                font-size: 12px;
+            }
 
-        .icon-link i {
-            font-size: 20px; /* Reduz o tamanho do ícone */
-        }
+            .form {
+                width: 95%;
+                padding: 10px;
+                margin-left: 11px;
+            }
+
+            
+
+            footer {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .icon-link {
+                font-size: 16px; /* Reduz o tamanho do texto */
+                padding: 8px 16px; /* Ajusta o espaçamento interno */
+            }
+
+            .icon-link i {
+                font-size: 20px; /* Reduz o tamanho do ícone */
+            }
     }
 
     @media (max-width: 480px) {
@@ -438,14 +481,15 @@
 </head>
 <body>
     <header>
-        <h1 class="title">
-            <img src="logo.jpg" alt="Zaly Serviços">
-        </h1>
-        <nav>
-            <a href="#banner-form">Solicitar Cotação</a>
-            <a href="#about-section">Conheça a Zaly</a>
-            <a href="#contact-section">Contato</a>
-        </nav>
+        <div class="header-container">
+            <h1 class="title">
+                <img src="logo.jpg" alt="Zaly Serviços">
+            </h1>
+            <nav>
+                <a href="#about-section">Conheça a Zaly</a>
+                <a href="#contact-section">Contato</a>
+            </nav>
+        </div>
     </header>
 
     <div class="form-banner">
