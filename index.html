@@ -3,30 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Inclusão das Fontes "League Spartan" e "Stolzl" -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Inclusão da Fonte Customizada "Stolzl" via @font-face -->
+    <style>
+        @font-face {
+            font-family: 'Stolzl';
+            src: url('fonts/Stolzl-Regular.woff2') format('woff2'),
+                 url('fonts/Stolzl-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Stolzl';
+            src: url('fonts/Stolzl-Bold.woff2') format('woff2'),
+                 url('fonts/Stolzl-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Zaly Serviços</title>
     <style>
-        /* Seu CSS permanece o mesmo */
+        /* Reset e Box Sizing */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        /* Fontes Globais */
         body {
             margin: 0;
-            font-family: 'Roboto', Arial, sans-serif;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando ambas as fontes */
             background-size: cover;
             padding-bottom: 53px;
             overflow-x: hidden;
+            padding-top: 60px; /* Espaço para o header fixo */
         }
 
+        /* Header */
         header {
+            position: fixed; /* Fixo no topo */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Alto z-index para ficar acima de outros elementos */
             display: flex;
             justify-content: center; /* Centraliza o contêiner dentro do header */
             align-items: center;
             background-color: #f4f4f4;
-            padding: 10px 20px;
+            padding: 8px 20px; /* Reduzido para diminuir a altura */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+            height: 8%;
         }
 
         .header-container {
@@ -37,7 +67,7 @@
         }
 
         .header-container h1 {
-            margin-right: 40px; /* Espaçamento entre o logo e a navegação */
+            margin-right: 20px; /* Espaçamento entre o logo e a navegação */
         }
 
         header nav {
@@ -50,8 +80,16 @@
             color: #007BFF;
             margin: 0 10px;
             font-weight: bold;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
+            cursor: pointer; /* Indica que é clicável */
+            transition: color 0.3s ease;
         }
 
+        header nav a:hover {
+            color: #0056b3; /* Cor no hover */
+        }
+
+        /* Form Banner */
         .form-banner {
             height: auto;
             min-height: 300px; /* Define uma altura mínima */
@@ -59,50 +97,37 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* align-items: center; */
             background: url(banner.png) no-repeat center center;
             background-size: cover; /* Faz a imagem preencher a div completamente */
-            background-attachment: fixed; /* Adiciona um efeito de paralaxe opcional */
+            /* background-attachment: fixed; Removido para imagem estacionária */
         }
+
         .form-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            max-width: 400px; /* Reduz o tamanho máximo */
+            max-width: 600px; /* Aumentado de 500px para 600px */
             width: 90%; /* Ajusta a largura para telas menores */
             padding: 20px; /* Espaçamento interno do formulário */
-            background: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+            background: #ffffff; /* Fundo branco sólido */
             border-radius: 16px; /* Bordas arredondadas */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra */
-            height: 490px;
-            margin-left: 118px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            margin: 0 auto; /* Centraliza o formulário */
         }
-        
-        /* Inputs e botões responsivos */
+
+        /* Inputs e Botões Responsivos */
         .form-container input,
         .form-container button {
             width: 100%; /* Ocupa a largura do formulário */
             max-width: none; /* Remove o limite fixo */
-            font-size: 11px; /* Ajusta a fonte para telas menores */
+            font-size: 16px; /* Aumentado para melhor legibilidade */
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .form-container button {
-            padding: 8px; /* Botão confortável em telas pequenas */
-        }
-
-        .form-container input {
-            max-width: 450px; /* Reduzido proporcionalmente */
-            padding: 10px; /* Ajustado para proporção */
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            font-size: 11px; /* Ajustado proporcionalmente */
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container button {
-            font-size: 14px; /* Reduzido de 18px */
+            padding: 12px; /* Aumentado para conforto */
+            font-size: 20px; /* Aumentado para destaque */
             color: #fff;
             background: #007BFF;
             border: none;
@@ -112,59 +137,74 @@
             transition: background 0.3s ease;
         }
 
-        /* Seção de "Conheça a Zaly" e formulário ajustados */
+        .form-container input {
+            max-width: 100%; /* Ocupa toda a largura disponível */
+            padding: 12px; /* Ajustado para proporção */
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 16px; /* Ajustado proporcionalmente */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container button:hover {
+            background: #0056b3;
+        }
+
+        /* Seção "Conheça a Zaly" */
         .about-section {
-            background: url('banner.png') no-repeat center center fixed;
+            background: #ffffff; /* Fundo branco sólido */
             position: relative;
             width: 100%;
-            min-height: 500px; /* Ajusta o tamanho mínimo */
-            background-size: cover;
-            padding: 40px 20px; /* Espaçamento interno */
+            min-height: 500px;
+            padding: 40px 20px;
             display: flex;
-            flex-direction: column; /* Garante organização vertical */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            overflow: hidden; /* Evita que o conteúdo ultrapasse */
+            overflow: hidden;
             box-sizing: border-box;
         }
 
         .about-content {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+            background: #ffffff; /* Fundo branco sólido */
             border-radius: 16px; /* Bordas arredondadas */
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra */
             max-width: 90%; /* Ajuste da largura */
             overflow: hidden;
         }
 
-
-        /* Estilo do título */
+        /* Título "Conheça a Zaly" */
         .about-content h2 {
             font-size: 2.5rem;
             font-weight: bold;
             color: #007BFF; /* Azul vibrante */
             margin-bottom: 20px;
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
-        /* Estilo do texto */
+        /* Texto da Seção */
         .about-content p {
             font-size: 1.2rem;
             line-height: 1.8; /* Espaçamento entre linhas */
             margin-bottom: 20px;
             text-align: justify; /* Justifica o texto para melhor legibilidade */
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
-        /* Estilo para a chamada de ação */
+        /* Chamada de Ação */
         .about-content .call-to-action {
             font-size: 1.4rem;
             font-weight: bold;
             color: #0056b3; /* Azul mais forte */
             margin-top: 20px;
             text-align: center;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
+        /* Seção de Parceiros */
         .partners-section {
             padding: 5px 0px;
             height: 330px;
@@ -172,8 +212,9 @@
             background-size: cover;
         }
 
+        /* Seção de Contato */
         .contact-section {
-            background-size: cover;
+            background: #ffffff; /* Fundo branco sólido */
             padding: 40px 20px;
             display: flex;
             justify-content: center;
@@ -181,15 +222,27 @@
             box-sizing: border-box;
             width: 100%;
         }
-        
 
+        .contact-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+            gap: 40px;
+        }
+
+        /* Conteúdo de Contato */
         .contact-content {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
-            border-radius: 16px; /* Bordas arredondadas */
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra */
-            max-width: 90%; /* Ajuste da largura */
-            margin-left: -364px;
+            background: none; /* Removido fundo semi-transparente */
+            border-radius: 0; /* Removido arredondamento */
+            box-shadow: none; /* Removida sombra */
+            max-width: 100%;
+            margin-left: 0;
+            text-align: left;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .contact-content h2 {
@@ -198,6 +251,7 @@
             color: #007BFF; /* Azul vibrante */
             margin-bottom: 20px;
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .contact-content p {
@@ -205,14 +259,7 @@
             line-height: 1.8; /* Espaçamento entre linhas */
             margin-bottom: 20px;
             text-align: justify; /* Justifica o texto para melhor legibilidade */
-            display: flex;
-            flex-direction: row; /* Posição lado a lado em desktops */
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1200px; /* Largura máxima da seção */
-            width: 100%;
-            gap: 40px; /* Espaço entre texto e formulário */
-            padding: 20px;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .contact-content .call-to-action {
@@ -221,23 +268,19 @@
             color: #0056b3; /* Azul mais forte */
             margin-top: 20px;
             text-align: center;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
-        .contact-image {
-            height: 300px;
-            background-size: cover;
-            border-radius: 10px;
-            margin-bottom: 450px;
-        }
-
+        /* Formulário de Contato */
         .form {
             width: 100%;
             max-width: 600px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: #ffffff; /* Fundo branco sólido */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 2;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .form input,
@@ -249,6 +292,7 @@
             border-radius: 5px;
             font-size: 16px;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .form button {
@@ -262,19 +306,22 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .form button:hover {
             background-color: #0056b3;
         }
 
+        /* Logo */
         .title img {
             display: block;
-            max-width: 32%;
+            max-width: 19%;
             height: auto;
-            margin: 0px 2px auto;
+            margin: 0px 13px auto;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -283,8 +330,16 @@
             width: 100%;
             bottom: 0;
             z-index: 2;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
+        footer a {
+            color: #007BFF;
+            text-decoration: none;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
+        }
+
+        /* Ícones de Contato */
         .contact-icons {
             display: flex;
             flex-direction: column; /* Empilha os ícones verticalmente */
@@ -310,6 +365,7 @@
             transition: background-color 0.3s, transform 0.3s;
             width: 90%;
             max-width: 450px;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .icon-link:hover {
@@ -328,13 +384,8 @@
             font-size: 24px; /* Tamanho maior do ícone */
         }
 
+        /* Media Queries para Responsividade */
         @media (min-width: 1200px) {
-            .form {
-                right: 2%;
-                position: absolute;
-                margin-top: -35%;
-            }
-
             .header-container {
                 max-width: 1000px; /* Ajuste conforme necessário */
             }
@@ -345,13 +396,6 @@
         }
 
         @media (max-width: 768px) {
-
-            /* .header-container h1 {
-                margin-right: 179px;
-            } */
-
-
-        
             header {
                 flex-direction: column;
                 align-items: center;
@@ -361,13 +405,13 @@
 
             .header-container {
                 flex-direction: column; /* Empilha logo e nav verticalmente */
-                align-items: flex-start; /* Alinha à esquerda */
+                align-items: center; /* Centraliza alinhamento */
                 width: 100%;
             }
 
             .header-container h1 {
-                margin-right: 0; /* Remove o espaçamento direito */
-                margin-bottom: 10px; /* Espaçamento abaixo do logo */
+                margin-left: -61px;
+                margin-bottom: -44px;
             }
 
             header nav {
@@ -379,19 +423,17 @@
             header nav a {
                 width: auto; /* Ajusta a largura dos links */
                 font-size: larger;
-                top: -69px;
-                position: relative;
+                /* Remove top e position para evitar deslocamentos */
+                position: static;
             }
-
 
             .form-banner {
                 min-height: 200px;
                 padding: 20px 10px;
                 align-items: center;
                 background: url(bannermobile.png) no-repeat center center;
+                background-size: cover;
             }
-
-            
 
             .form-container {
                 width: 95%;
@@ -399,15 +441,9 @@
                 margin-left: 0px;
             }
 
-            .form-container input,
-            .form-container button {
-                font-size: 14px;
-            }
-
             .about-section {
                 padding: 20px 10px;
-                
-                background: url('bannermobile.png') no-repeat center center fixed;
+                background: #ffffff; /* Fundo branco sólido para mobile */
             }
 
             .about-content {
@@ -425,23 +461,23 @@
                 padding: 20px 10px;
             }
 
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .contact-content {
-                margin-bottom: 8px;
-                margin-left: 20px; /* Remove o deslocamento */
-                margin-right: 0; /* Garante centralização */
-                margin-top: 20px; /* Adiciona espaçamento superior opcional */
+                margin-bottom: 20px; /* Espaçamento entre texto e formulário */
                 width: 100%; /* Garante que ocupe toda a largura disponível */
                 text-align: center; /* Centraliza o conteúdo internamente */
-                font-size: 12px;
+                font-size: 14px;
             }
 
             .form {
                 width: 95%;
                 padding: 10px;
-                margin-left: 11px;
+                margin-left: 0;
             }
-
-            
 
             footer {
                 font-size: 12px;
@@ -456,29 +492,28 @@
             .icon-link i {
                 font-size: 20px; /* Reduz o tamanho do ícone */
             }
-    }
-
-    @media (max-width: 480px) {
-        .form-container {
-            padding: 10px;
         }
 
-        .form-container input,
-        .form-container button {
-            font-size: 12px;
-        }
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 10px;
+            }
 
-        .about-content p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
+            .form-container input,
+            .form-container button {
+                font-size: 12px;
+            }
 
+            .about-content p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
 
-        footer {
-            font-size: 10px;
-            padding: 5px;
+            footer {
+                font-size: 10px;
+                padding: 5px;
+            }
         }
-    }
 
     </style>
 </head>
@@ -556,14 +591,14 @@
                     Fale conosco agora mesmo e dê o primeiro passo para transformar sua logística em algo verdadeiramente estratégico!
                 </p>
             </div>
-    
+
             <!-- Formulário de Contato -->
             <div class="form">
                 <form id="contact-form">
-                    <input type="text" name="nome" placeholder="Seu Nome" required><br>
-                    <input type="email" name="email" placeholder="Seu E-mail" required><br>
-                    <input type="tel" name="telefone" placeholder="Telefone" required><br>
-                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea><br>
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                    <input type="tel" name="telefone" placeholder="Telefone" required>
+                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
                     <button type="submit">Enviar</button>
                 </form>
                 <div id="response-message"></div>
@@ -591,71 +626,123 @@
         </span>
     </footer>
 
+    <!-- Scripts para Formulários e Scroll Suave -->
     <script>
-        document.getElementById('contact-form').addEventListener('submit', async function (e) {
-          e.preventDefault();
-          const form = e.target;
-          const formData = new FormData(form);
+        document.addEventListener('DOMContentLoaded', () => {
+            // Seleciona todos os links de navegação
+            const navLinks = document.querySelectorAll('header nav a');
 
-          const data = {
-            nome: formData.get('nome'),
-            email: formData.get('email'),
-            telefone: formData.get('telefone'),
-            mensagem: formData.get('mensagem')
-          };
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Impede o comportamento padrão do clique
 
-          try {
-            const response = await fetch('/enviar-email', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(data)
+                    // Obtém o alvo do link
+                    const targetId = this.getAttribute('href').substring(1); // Remove o "#" do href
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        smoothScroll(targetSection);
+                    }
+                });
             });
 
-            const result = await response.text();
-            document.getElementById('response-message').innerText = result;
-            form.reset(); // Opcional: limpa o formulário após o envio
-          } catch (error) {
-            document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
-          }
+            // Função para scroll suave
+            function smoothScroll(target) {
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - 50; // Ajuste para compensar o header fixo
+                const startPosition = window.scrollY;
+                const distance = targetPosition - startPosition;
+                const duration = 1000; // Tempo em milissegundos
+                let startTime = null;
+
+                function animationScroll(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = ease(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+
+                    if (timeElapsed < duration) requestAnimationFrame(animationScroll);
+                }
+
+                // Função de easing (suavização)
+                function ease(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return (c / 2) * t * t + b;
+                    t--;
+                    return (-c / 2) * (t * (t - 2) - 1) + b;
+                }
+
+                requestAnimationFrame(animationScroll);
+            }
         });
     </script>
 
-<script>
-    document.getElementById('quote-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
+    <script>
+        // Formulário de Cotação
+        document.getElementById('quote-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
 
-        const data = {
-            cep_origem: formData.get('cep_origem'),
-            cep_destino: formData.get('cep_destino'),
-            peso: formData.get('peso'),
-            tamanho: formData.get('tamanho'),
-            tipo_quantidade: formData.get('tipo_quantidade'),
-            valor: formData.get('valor'),
-            email_contato: formData.get('email_contato'),
-            telefone: formData.get('telefone')
-        };
+            const data = {
+                cep_origem: formData.get('cep_origem'),
+                cep_destino: formData.get('cep_destino'),
+                peso: formData.get('peso'),
+                tamanho: formData.get('tamanho'),
+                tipo_quantidade: formData.get('tipo_quantidade'),
+                valor: formData.get('valor'),
+                email_contato: formData.get('email_contato'),
+                telefone: formData.get('telefone')
+            };
 
-        try {
-            const response = await fetch('/solicitar-cotacao', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            try {
+                const response = await fetch('/solicitar-cotacao', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
 
-            const result = await response.text();
-            document.getElementById('response-message-quote').innerText = result;
-            form.reset(); // Opcional: limpa o formulário após o envio
-        } catch (error) {
-            document.getElementById('response-message-quote').innerText = 'Erro ao enviar a mensagem.';
-        }
-    });
-</script>
+                const result = await response.text();
+                document.getElementById('response-message-quote').innerText = result;
+                form.reset(); // Opcional: limpa o formulário após o envio
+            } catch (error) {
+                document.getElementById('response-message-quote').innerText = 'Erro ao enviar a mensagem.';
+            }
+        });
+    </script>
+
+    <script>
+        // Formulário de Contato
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+
+            const data = {
+                nome: formData.get('nome'),
+                email: formData.get('email'),
+                telefone: formData.get('telefone'),
+                mensagem: formData.get('mensagem')
+            };
+
+            try {
+                const response = await fetch('/enviar-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.text();
+                document.getElementById('response-message').innerText = result;
+                form.reset(); // Opcional: limpa o formulário após o envio
+            } catch (error) {
+                document.getElementById('response-message').innerText = 'Erro ao enviar a mensagem.';
+            }
+        });
+    </script>
 
 </body>
 </html>
