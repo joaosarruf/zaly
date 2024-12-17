@@ -22,8 +22,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // true para 465, false para outras portas
     auth: {
-        user: 'joaopsarruf@gmail.com', // Seu e-mail de envio
-        pass: 'azgeaszubqhgmcje'  // Sua senha de app (sem espaços)
+        user: 'zaly.formulario@gmail.com', // Seu e-mail de envio
+        pass: 'wnwnszmxbopcaumi'  // Sua senha de app (sem espaços)
     },
     debug: true, // Habilita logs detalhados (opcional)
     logger: true // Exibe logs no console (opcional)
@@ -40,8 +40,8 @@ app.post('/enviar-email', async (req, res) => {
 
     // Configurações do e-mail
     const mailOptions = {
-        from: `"Formulário Zaly" <joaopsarruf@gmail.com>`, // Remetente
-        to: 'joaopsarruf@gmail.com', // Destinatário (seu e-mail)
+        from: `"Formulário Zaly" <zaly.formulario@gmail.com>`, // Remetente
+        to: 'zalyservicos@gmail.com', // Destinatário (seu e-mail)
         subject: `Novo contato de ${nome}`,
         text: `Nome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}\nMensagem:\n${mensagem}`
     };
