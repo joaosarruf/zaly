@@ -72,17 +72,17 @@
 
         header nav {
             display: flex;
-            gap: 20px; /* Espaçamento entre os links */
+            gap: 90px; /* Espaçamento entre os links */
         }
 
         header nav a {
             text-decoration: none;
-            color: #333333; /* Cor de texto mais escura para melhor legibilidade */
+            color: #007BFF; /* Cor de texto mais escura para melhor legibilidade */
             font-weight: 700;
             font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
             cursor: pointer; /* Indica que é clicável */
             transition: color 0.3s ease;
-            font-size: 16px;
+            font-size: 25px;
         }
 
         header nav a:hover {
@@ -172,7 +172,7 @@
 
         /* Seção "Conheça a Zaly" */
         .about-section {
-            background: #ffffff; /* Fundo branco sólido */
+            background: #f4f4f4; /* Fundo branco sólido */
             position: relative;
             width: 100%;
             min-height: 500px;
@@ -188,7 +188,7 @@
 
         .about-content {
             padding: 20px;
-            background: #ffffff; /* Fundo branco sólido */
+            background: #f4f4f4; /* Fundo branco sólido */
             border-radius: 16px; /* Bordas arredondadas */
             max-width: 90%; /* Ajuste da largura */
             overflow: hidden;
@@ -233,7 +233,7 @@
 
         /* Seção de Contato */
         .contact-section {
-            background: #ffffff; /* Fundo branco sólido */
+            background: #f4f4f4; /* Fundo branco sólido */
             padding: 40px 20px;
             display: flex;
             justify-content: center;
@@ -335,7 +335,7 @@
         /* Logo */
         .title img {
             display: block;
-            max-width: 19%;
+            max-width: 44%;
             height: auto;
             margin: 0px 13px auto;
         }
@@ -410,7 +410,7 @@
             }
 
             header nav a {
-                font-size: 16px; /* Aumenta o tamanho da fonte dos links */
+                font-size: 25px; /* Aumenta o tamanho da fonte dos links */
             }
         }
 
@@ -420,6 +420,10 @@
                 align-items: center;
                 text-align: center;
                 padding: 5px 20px; /* Reduzido de 10px para 5px */
+            }
+
+            .title img{
+                max-width: 25%;
             }
 
             .header-container {
@@ -434,9 +438,10 @@
             }
 
             header nav {
-                width: 100%; /* Ocupa toda a largura disponível */
+                width: 100%;
                 flex-direction: column;
-                gap: 10px; /* Espaçamento entre os links */
+                gap: 19px;
+                margin-top: 14px;
             }
 
             header nav a {
@@ -468,7 +473,7 @@
             }
             .about-section {
                 padding: 20px 10px;
-                background: #ffffff; /* Fundo branco sólido para mobile */
+                background: #f4f4f4; /* Fundo branco sólido para mobile */
             }
 
             .about-content {
@@ -479,6 +484,10 @@
 
             .about-content h2 {
                 font-size: 20px;
+            }
+            .partners-section{
+                height: 172px;
+
             }
 
             .contact-section {
@@ -564,7 +573,7 @@
     <header>
         <div class="header-container">
             <h1 class="title">
-                <img src="logo.jpg" alt="Zaly Serviços">
+                <img src="logo.png" alt="Zaly Serviços">
             </h1>
             <nav>
                 <a href="#about-section">Conheça a Zaly</a>
