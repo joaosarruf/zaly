@@ -91,15 +91,15 @@
 
         /* Form Banner */
         .form-banner {
-            height: auto;
-            min-height: 300px; /* Define uma altura mínima */
+            height: 891px;
+            min-height: 347px;
             padding: 40px 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             background: url(banner.png) no-repeat center center;
-            background-size: cover; /* Faz a imagem preencher a div completamente */
-            /* background-attachment: fixed; Removido para imagem estacionária */
+            background-size: cover;
+            margin-right: -268px;
         }
 
         .form-container {
@@ -107,13 +107,41 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            max-width: 600px; /* Aumentado de 500px para 600px */
-            width: 90%; /* Ajusta a largura para telas menores */
-            padding: 20px; /* Espaçamento interno do formulário */
-            background: #ffffff; /* Fundo branco sólido */
-            border-radius: 16px; /* Bordas arredondadas */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            margin: 0 auto; /* Centraliza o formulário */
+            max-width: 467px;
+            width: 90%;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 0 auto;
+            margin-left: 260px;
+            top: 115px;
+            position: absolute;
+            height: 710px;
+        }
+
+        .quote-form {
+            display: flex;
+            height: 810px;
+
+        }
+
+        .form-container input {
+            width: 100%;
+            height: 50px;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 18px;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0px 5px 9px 14px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* Centralizar o texto do placeholder */
+        .form-container input::placeholder {
+            text-align: center; 
         }
 
         /* Inputs e Botões Responsivos */
@@ -121,31 +149,26 @@
         .form-container button {
             width: 100%; /* Ocupa a largura do formulário */
             max-width: none; /* Remove o limite fixo */
-            font-size: 16px; /* Aumentado para melhor legibilidade */
+            font-size: 23px; /* Aumentado para melhor legibilidade */
             font-family: 'League Spartan', 'Stolzl', sans-serif; /* Aplicando fontes */
         }
 
         .form-container button {
-            padding: 12px; /* Aumentado para conforto */
-            font-size: 20px; /* Aumentado para destaque */
+            padding: 12px;
+            font-size: 28px;
             color: #fff;
             background: #007BFF;
             border: none;
-            border-radius: 25px;
+            border-radius: 50px;
             cursor: pointer;
-            margin-top: 15px; /* Mantido o espaçamento */
+            margin-top: 15px;
             transition: background 0.3s ease;
+            display: inline-block;
+            width: 414px;
+            white-space: normal;
+            word-break: break-all;
         }
 
-        .form-container input {
-            max-width: 100%; /* Ocupa toda a largura disponível */
-            padding: 12px; /* Ajustado para proporção */
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            font-size: 16px; /* Ajustado proporcionalmente */
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
 
         .form-container button:hover {
             background: #0056b3;
@@ -532,7 +555,6 @@
 
     <div class="form-banner">
         <div class="form-container">
-            <h2>Solicite uma Cotação</h2>
             <form id="quote-form">
                 <input type="text" name="cep_origem" placeholder="CEP de Origem" required>
                 <input type="text" name="cep_destino" placeholder="CEP de Destino" required>
@@ -542,7 +564,7 @@
                 <input type="number" name="valor" placeholder="Valor da Carga (R$)" required>
                 <input type="email" name="email_contato" placeholder="E-mail para Contato" required>
                 <input type="tel" name="telefone" placeholder="Telefone (DDD + 9 dígitos)" required>
-                <button type="submit">Solicitar Cotação</button>
+                <button type="submit"><strong>SOLICITAR<br>COTAÇÃO</strong></button>
             </form>
             <div id="response-message-quote"></div>
         </div>
@@ -610,12 +632,12 @@
     <div class="contact-icons">
         <!-- Ícone do WhatsApp -->
         <a href="https://wa.me/5581996158047" target="_blank" class="icon-link icon-whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
+            <i class="fab fa-whatsapp"></i> WhatsApp - +55(81) 99615-8047
         </a>
         
         <!-- Ícone do E-mail -->
         <a href="mailto:zalyservicos@gmail.com" target="_blank" class="icon-link icon-email">
-            <i class="fas fa-envelope"></i> E-mail
+            <i class="fas fa-envelope"></i> E-mail - zalyservicos@gmail.com
         </a>
     </div>
 
