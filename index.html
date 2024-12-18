@@ -112,16 +112,13 @@
             padding: 20px;
             border-radius: 16px;
             margin: 0 auto;
-            margin-left: 260px;
-            top: 115px;
-            position: absolute;
-            height: 710px;
-        }
+            margin-left: 238px;
+         }
 
         .quote-form {
             display: flex;
-            height: 810px;
-
+            flex-direction: column;
+            width: 100%;
         }
 
         .form-container input {
@@ -137,7 +134,6 @@
             box-shadow: 0px 5px 9px 14px rgba(0, 0, 0, 0.3);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
-
 
         /* Centralizar o texto do placeholder */
         .form-container input::placeholder {
@@ -164,11 +160,11 @@
             margin-top: 15px;
             transition: background 0.3s ease;
             display: inline-block;
-            width: 414px;
+            /* Removido width fixo de 414px para não estourar a tela no mobile */
+            width: 100%; 
             white-space: normal;
-            word-break: break-all;
+            word-break: break-word;
         }
-
 
         .form-container button:hover {
             background: #0056b3;
@@ -433,7 +429,7 @@
             }
 
             .header-container h1 {
-                margin-left: -61px;
+                margin-left: 0;
                 margin-bottom: -44px;
             }
 
@@ -446,12 +442,10 @@
             header nav a {
                 width: auto; /* Ajusta a largura dos links */
                 font-size: larger;
-                /* Remove top e position para evitar deslocamentos */
                 position: static;
             }
 
             .form-banner {
-                min-height: 200px;
                 padding: 20px 10px;
                 align-items: center;
                 background: url(bannermobile.png) no-repeat center center;
@@ -461,9 +455,15 @@
             .form-container {
                 width: 95%;
                 padding: 15px;
-                margin-left: 11px;
+                margin: 0 auto;
+                box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+                margin-left: -25px;
             }
 
+            .quote-form{
+
+                width: 85%;
+            }
             .about-section {
                 padding: 20px 10px;
                 background: #ffffff; /* Fundo branco sólido para mobile */
@@ -555,7 +555,7 @@
 
     <div class="form-banner">
         <div class="form-container">
-            <form id="quote-form">
+            <form id="quote-form" class="quote-form">
                 <input type="text" name="cep_origem" placeholder="CEP de Origem" required>
                 <input type="text" name="cep_destino" placeholder="CEP de Destino" required>
                 <input type="number" name="peso" placeholder="Peso da Carga (kg)" required>
@@ -627,7 +627,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="contact-icons">
         <!-- Ícone do WhatsApp -->
