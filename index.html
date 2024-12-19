@@ -163,10 +163,11 @@
             margin-top: 15px;
             transition: background 0.3s ease;
             display: inline-block;
-            /* Removido width fixo de 414px para não estourar a tela no mobile */
             width: 100%; 
             white-space: normal;
             word-break: break-word;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 5px 9px 14px rgba(0, 0, 0, 0.3);
         }
 
         .form-container button:hover {
@@ -229,12 +230,34 @@
 
         /* Seção de Parceiros */
         .partners-section {
+            position: relative;
             padding: 5px 0px;
-            height: 360px;
+            height: 345px;
             background: url(parceiros.png) no-repeat center center;
-            background-size: initial;
-            width: 100%;
+            background-size: cover;
+            width: 102%;
             margin-left: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .partners-text {
+            position: absolute;
+            top: 20px; /* Ajuste a distância do topo conforme necessário */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .partners-text h2 {
+            font-size: 2rem; /* Ajuste o tamanho da fonte conforme necessário */
+            color: white; /* Cor do texto */
+            margin: 0;
+            font-family: 'League Spartan', 'Stolzl', sans-serif; /* Mantém a consistência das fontes */
         }
 
         /* Seção de Contato */
@@ -509,6 +532,10 @@
 
             }
 
+            .partners-text h2 {
+                font-size: 1rem;
+            }
+
             .contact-section {
                 flex-direction: column;
                 padding: 20px 10px;
@@ -641,7 +668,11 @@
         </div>
     </div>
 
-    <div class="partners-section"></div>
+    <div class="partners-section">
+        <div class="partners-text">
+            <h2>NOSSOS PARCEIROS</h2>
+        </div>
+    </div>
 
     <div class="contact-section" id="contact-section">
         <div class="contact-container">
