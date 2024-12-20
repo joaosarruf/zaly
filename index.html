@@ -482,7 +482,7 @@
             header nav {
                 width: 100%;
                 flex-direction: column;
-                gap: 19px;
+                gap: 6px;
                 margin-top: 14px;
             }
 
@@ -554,9 +554,9 @@
             }
 
             .form {
-                width: 95%;
+                width: 89%;
                 padding: 10px;
-                margin-left: 0;
+                margin-right: 1px;
             }
 
             footer {
@@ -582,7 +582,7 @@
                 background: url(bannermobile.png) no-repeat center center;
                 background-size: cover;
                 margin-right: -80px;
-                height: 664px;
+                height: 543px;
             }
 
             .form-container {
@@ -597,9 +597,9 @@
                 padding: 10px;
             }
 
-            .form-container input,
-            .form-container button {
+            .form-container input {
                 font-size: 18px;
+                height: 36px;
             }
 
             .about-content p {
@@ -607,11 +607,42 @@
                 line-height: 1.5;
             }
 
+            .contact-content{
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .partners-section{
+                height: 149px;
+            }
+
             footer {
                 font-size: 15px;
                 padding: 5px;
             }
         }
+
+        @media (max-width: 410px)  {
+            .form-container button {
+                margin-left: 8% !important;
+                font-size: 17px !important;
+                width: 83% !important;
+            }
+
+            .header nav{
+                width: 100%;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 10px;
+            }
+
+            .header nav a{
+                font-size: 14px;
+            }
+
+            
+        }
+
 
     </style>
 </head>
